@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Hélo et Kevouche</title>
+</head>
+<body>
+  <div id="circle-container">
+    <div id="circle" class="sp-circle"></div>
+  </div>
+  <nav>
+    <ul>
+      <li onclick="filmHasard()">
+        <h3 class="bouton-titre">Film au hasard</h3>
+        <img class="icon-nav dice" src="img/dice.svg" alt="dice">
+      </li>
+      <li onclick="filmsPasVu()">
+        <h3 class="bouton-titre">Films pas vu</h3>
+        <img class="icon-nav eye" src="img/eye-uncheck.svg" alt="eye uncheck">
+      </li>
+      <li onclick="filmsVu()">
+        <h3 class="bouton-titre">Films déjà vu</h3>
+        <img class="icon-nav eye" src="img/eye-check.svg" alt="eye check">
+      </li>
+
+    </ul>
+  </nav>
+  <div id="googlesheet"></div>
+  <div id="card-container">
+    <img class="icon fleche" src="img/arrow-left.svg" alt="arrow left" onclick="navMoins()">
+    <div class="card">
+      <div class="information">
+        <h4 class="titre">Titre</h4>
+        <p class="synopsis">Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur </p>
+        <div class="notes">
+          <p class="note-presse">Presse <span> 4.5</span></p>
+          <p class="note-spectateur">Spectateur <span> 4.5</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="information">
+        <h4 class="titre">Titre</h4>
+        <p class="synopsis">Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur </p>
+        <div class="notes">
+          <p class="note-presse">Presse <span> 4.5</span></p>
+          <p class="note-spectateur">Spectateur <span> 4.5</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="information">
+        <h4 class="titre">Titre</h4>
+        <p class="synopsis">Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur </p>
+        <div class="notes">
+          <p class="note-presse">Presse <span> 4.5</span></p>
+          <p class="note-spectateur">Spectateur <span> 4.5</span></p>
+        </div>
+      </div>
+    </div>    
+    <img class="icon fleche" src="img/arrow-right.svg" alt="arrow left" onclick="navPlus()">
+    </div>
+  </div>
+  <div id="hasard-container">
+    <div class="card secret-card"> 
+      <div class="information secret">
+        <h4 class="titre">Titre</h4>
+        <p class="synopsis">Lorem ipsum dolor sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur sit amet consectetur </p>
+        <div class="notes">
+          <p class="note-presse">Presse <span> 4.5</span></p>
+          <p class="note-spectateur">Spectateur <span> 4.5</span></p>
+        </div>
+    </div>
+</body>
+</html>
