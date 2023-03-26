@@ -180,26 +180,31 @@ function filmHasard(){
     if (!card.children[0].classList.contains("secret")){
         card.children[0].classList.add("secret");
     }
+    if (!card.classList.contains("secret-anim")){
+        card.classList.add("secret-anim");
+    }
     card.style.backgroundImage = "url(img/surprise.jpg)";
     card.addEventListener("click", () =>{
-        card.classList.remove("secret-card");
-        card.classList.add("spin");
-        setTimeout(() => {
-            card.classList.add("secret-card");
-            card.classList.remove("spin");
-            const listeFilm = listeObjet();
-            let listeTriee = []; 
-            listeActuelle = [];
-            for (let i = 0; i < listeFilm.length; i++) {
-                if (listeFilm[i].vuEnsemble == "Non"){
-                     listeTriee.push(listeFilm[i]);
-                } 
-            }
-            const randomNumber = Math.floor(Math.random() * listeTriee.length + 1);
-            listeActuelle.push(listeTriee[randomNumber]);
-            createRandomCard(listeActuelle);
-            card.children[0].classList.remove("secret");
-        }, 1000);
+        if (card.classList.contains("secret-anim")){
+            card.classList.remove("secret-anim");
+            card.classList.add("spin");
+            setTimeout(() => {
+                card.classList.add("secret-card");
+                card.classList.remove("spin");
+                const listeFilm = listeObjet();
+                let listeTriee = []; 
+                listeActuelle = [];
+                for (let i = 0; i < listeFilm.length; i++) {
+                    if (listeFilm[i].vuEnsemble == "Non"){
+                        listeTriee.push(listeFilm[i]);
+                    } 
+                }
+                const randomNumber = Math.floor(Math.random() * listeTriee.length + 1);
+                listeActuelle.push(listeTriee[randomNumber]);
+                createRandomCard(listeActuelle);
+                card.children[0].classList.remove("secret");
+            }, 1000);
+        }
     });
 }
 

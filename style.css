@@ -187,19 +187,20 @@ li:hover .eye{
     gap: 1em;    
 }
 
+
+.secret{
+    visibility: hidden;
+}
+
 .secret-card{
     visibility: inherit;
 }
 
-.secret-card:hover{
+.secret-anim:hover{
     cursor:pointer;
     box-shadow: 0px 0px 20px gold;
     -webkit-animation: Surprise .7s infinite ease-in;
 	animation: Surprise .7s infinite ease-in;
-}
-
-.secret{
-    visibility: hidden;
 }
 
 
