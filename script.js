@@ -192,7 +192,7 @@ function filmHasard(){
     });
 }
 
-function filmsPasVu(){
+function filmsPasVus(){
     Visiblity("on");
     nav = 0;
     const listeFilm = listeObjet();
@@ -206,7 +206,7 @@ function filmsPasVu(){
     createCard(listeActuelle);
 }
 
-function filmsVu(){
+function filmsVus(){
     Visiblity("on");
     nav = 0;
     let listeTriee = []; 
