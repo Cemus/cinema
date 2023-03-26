@@ -124,7 +124,6 @@ function navMoins(){
 function Visiblity(mode){
     const cardContainer = document.getElementById("card-container")
     const hasardContainer = document.getElementById("hasard-container");
-    const hasard = hasardContainer.children[0];
     switch (mode){
         case "on":
 
@@ -150,6 +149,18 @@ function Visiblity(mode){
     }
 }
 
+function boutonActif(numeroActif){
+    const bouton = document.getElementsByClassName("bouton-menu");
+    for (let i = 0; i < 3; i++) {
+        if (i == numeroActif){
+            bouton[i].classList.add("bouton-actif");
+        }
+        else{
+            bouton[i].classList.remove("bouton-actif");           
+        }
+    }
+}
+
 function tousLesFilms(){
     Visiblity("on");
     detruireLoading();
@@ -161,6 +172,7 @@ function tousLesFilms(){
 }
 
 function filmHasard(){
+    boutonActif(0);
     Visiblity("off");
     //Interaction avec la carte
     const cards = document.getElementsByClassName("card");
@@ -169,7 +181,6 @@ function filmHasard(){
         card.children[0].classList.add("secret");
     }
     card.style.backgroundImage = "url(img/surprise.jpg)";
-    console.log(card.children[0]);
     card.addEventListener("click", () =>{
         card.classList.remove("secret-card");
         card.classList.add("spin");
@@ -193,6 +204,7 @@ function filmHasard(){
 }
 
 function filmsPasVus(){
+    boutonActif(1);
     Visiblity("on");
     nav = 0;
     const listeFilm = listeObjet();
@@ -207,6 +219,7 @@ function filmsPasVus(){
 }
 
 function filmsVus(){
+    boutonActif(2);
     Visiblity("on");
     nav = 0;
     let listeTriee = []; 
@@ -229,16 +242,12 @@ function createCard(array){
     const noteSpectateur = document.getElementsByClassName("note-spectateur");
     for (let i = 0; i < 3; i++) {
         let navigation = nav;
-        console.log(listeFilm);
-        console.log("(nav origin )" + nav);
-        console.log("nav" + navigation);
         if (navigation + i >= listeFilm.length){
             navigation = navigation - listeFilm.length + i;
         }
         else{
             navigation = navigation + i;
         }
-        console.log("nav" + navigation);
         if (listeFilm[navigation].image !== ""){
             card[i].style.backgroundImage = `url(${listeFilm[navigation].image})`
         }
