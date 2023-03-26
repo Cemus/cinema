@@ -253,8 +253,8 @@ li:hover .eye{
     background-color: #000000f6;
     color: white;
     text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
     transition: height 2s ease-out;
 }
 
