@@ -219,6 +219,7 @@ function filmHasard() {
         card.classList.add("secret-card");
         card.classList.remove("spin");
         const listeFilm = listeObjet();
+        console.log("listefilm" + listeFilm);
         let listeTriee = [];
         listeActuelle = [];
         for (let i = 0; i < listeFilm.length; i++) {
@@ -226,7 +227,11 @@ function filmHasard() {
             listeTriee.push(listeFilm[i]);
           }
         }
-        const randomNumber = Math.floor(Math.random() * listeTriee.length + 1);
+        console.log(listeTriee);
+        const randomNumber = Math.floor(
+          Math.random() * (listeTriee.length - 0) + 0
+        );
+        console.log("randomn" + randomNumber);
         listeActuelle.push(listeTriee[randomNumber]);
         console.log(listeActuelle);
         createRandomCard(listeActuelle);
